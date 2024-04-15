@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'main' %}
+<!--================================= main content ======================================-->
+<style>
+   .about{
+    background-image: url("static/assets/images/abt1.jpg");
+    background-attachment: fixed;
+    color: wheat;
+    padding: 10px;
+   }
+
+   .about img{
+    border-radius: 20px;
+    border-color: black;
+    border-style: double;
+   }
+</style>
+<div class="about">
+    <div class="row mt-3">
+      <div class="bg-warning text-center p-3 bg-opacity-75"><strong class="fs-4 text-decoration-underline text-danger">About Us</strong></div>
+      <div class="col-md-6 mt-3 p-3">
+        
+        <img src="{% static 'assets/images/about1.jpg' %}" class="img-thumbnail" alt="image"/>
+     </div>
+
+      <div class="col-md-6 mt-5 fs-5">
+        <p id="ABT">Taste and See Coffee Shop and Gallery offers a unique coffee house environment unlike any other in Macon. We are not only a place to drop in and get your morning cup of coffee (although you are more than welcome to do that), we are a place where you can sit down and enjoy that tailor-made cup of coffee.
+           If you need to work, we have a seating area created specifically for you. If you need to rest, we have a soft-seating area in front of a stone fire place that is perfect for your weary mind and body. We offer a delicious variety of coffee roasted in house made by our professionally trained baristas. 
+           </p>
+      </div>
+
+    </div><!--end 3rd row-->
+<div class="row">
+  <div class="col-md-6 mt-5 fs-5">
+    <p id="ABT">We have everything from classic coffee to our house made specialty beverages. All of our sauces & syrups are made in-house with all natural ingredients (no chemicals or preservatives) ensuring you the highest quality in taste & health. You can complete your coffee with one of our delicious sweet treats made by our very own baker. 
+      We look forward to serving you at Taste & See Coffee Shop and Gallery!</p>
+  </div>
+  <div class="col-md-6 p-3">
+    <img src="{% static 'assets/images/about2.jpg' %}" class="img-thumbnail" alt="image"/>
+  </div>
+</div> <!--end 4 th row-->
+</div>
+<!--=================================== end main content ==============================-->
+{% endblock 'main' %}
+  

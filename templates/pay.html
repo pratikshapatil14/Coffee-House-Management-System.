@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+
+<style>
+    .outer{
+        width: 85vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+   #rzp-button1{
+    
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    display: flex;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+
+    }
+
+    #rzp-button1:hover{
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+</style>
+<div class="col-md-2 mt-3 button">
+    <div class="outer">
+        <button id="rzp-button1">Pay Now</button>
+    </div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_TejwQSaMhByD1E", // Enter the Key ID generated from the Dashboard
+    "amount": "{{data.amount}}", // Amount is in currency subunits. Default currency is MYR. Hence, 50000 refers to 50000 sen.
+    "currency": "INR",
+    "name": "COFFEE APP",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "{{order_id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "callback_url": "https://eneqd3r9zrjok.x.pipedream.net/",
+    "redirect": true,
+    "prefill": {
+        "name": "Siti Aisyah",
+        "email": "siti.aisyah@example.com",
+        "contact": "+601113455567"
+    },
+    "notes": {
+        "address": "Curlec Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
+</div>
+{% endblock 'main' %}
